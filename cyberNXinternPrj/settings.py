@@ -92,10 +92,23 @@ WSGI_APPLICATION = 'cyberNXinternPrj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'cybernx',
+        "CLIENT": {
+            'host':'mongodb+srv://zaki:adminadmin@cluster1.b1ogtto.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE&retryWrites=true&w=majority',
+            'port': 27017,
+            'username':'zaki',
+            'password':'adminadmin',
+        }
     }
 }
 

@@ -101,15 +101,13 @@ WSGI_APPLICATION = 'cyberNXinternPrj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'cybernx',
-        "CLIENT": {
-            'host':'mongodb+srv://zaki:adminadmin@cluster1.b1ogtto.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE&retryWrites=true&w=majority',
-            'port': 27017,
-            'username':'zaki',
-            'password':'adminadmin',
-        }
-    }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':'cybernx',
+        'USER':'root', # CHANGE THIS WITH YOUR USERNAME #
+        'PASSWORD':os.environ.get('MY_SQL_PASSWORD'), # CHANGE THIS WITH YOU PASSWORD #
+        'HOST':'localhost',
+        'PORT':'3306'
+    }   
 }
 
 

@@ -4,7 +4,7 @@ This repository is the submission for cybernx assignment
 
 ## API Information
 
-### Register APi (POST Method only)
+### Register API (POST Method only)
 
 <h4>
     Path
@@ -110,9 +110,7 @@ This repository is the submission for cybernx assignment
   "token": "6a601f213218579c833f87f65503fe32607da80884e314f886ced237f0403393"
 }
 ```
-
-<hr />
-### Login APi (POST Method only)
+### Login API (POST Method only)
 
 <h4>
     Path
@@ -164,8 +162,7 @@ This repository is the submission for cybernx assignment
   "token": "bc682f3fbc087d347da3e48fc90f7a85db5dc906840ede9180cd1cb6bfb91ae5"
 }
 ```
-<hr />
-### Profile APi (GET Method only)
+### Profile API (GET Method only)
 
 <h4>
     Path

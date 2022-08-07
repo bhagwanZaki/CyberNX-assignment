@@ -63,21 +63,18 @@ class RegisterAPI(generics.GenericAPIView):
         print("Pofile  ",profileData)
 
         userProfile = userProfileSerializer(data=profileData)
-        try:
-            if userProfile.is_valid():
-                hotelData = userProfile.save()
-                return Response({
-                    "user": userSerializer(user, context=self.get_serializer_context()).data,
-                    "userProfile": userProfile.data,
-                    "token": AuthToken.objects.create(user)[1]
-                })
-            else:
-                user.delete()
-                raise ValidationError(userProfile.errors)
-        except Exception as e:
-            print(e)
+       
+        if userProfile.is_valid():
+            hotelData = userProfile.save()
+            return Response({
+                "user": userSerializer(user, context=self.get_serializer_context()).data,
+                "userProfile": userProfile.data,
+                "token": AuthToken.objects.create(user)[1]
+            })
+        else:
             user.delete()
-            return Response({'error_message':'Cool down'},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            raise ValidationError(userProfile.errors)
+       
 
         
 
